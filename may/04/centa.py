@@ -1,3 +1,6 @@
+# O(n) runtime and O(n) space complexity
+# same ideia as the cpp one
+
 def problem_2(arr):
     n = len(arr)
 
