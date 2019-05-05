@@ -4,9 +4,6 @@
 # used recursion but an iterative solution is possible
 # by: Centa
 
-from collections import deque
-
-
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
