@@ -7,7 +7,7 @@ class XOR_list:
 	def __init__(self):
 		self.head = None
 
-	def add(element):
+	def add(self, element):
 		if (head is None):
 			head = Node(element, 0^0)
 		else:
@@ -22,7 +22,7 @@ class XOR_list:
 			trav.both ^= 0
 			trav.both ^= get_pointer(tail)
 
-	def get(index):
+	def get(self, index):
 		if head is None: return -1
 		trav = head
 		next_addr = trav.both^0
