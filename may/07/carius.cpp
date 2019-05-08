@@ -8,12 +8,12 @@ auto cons(int a, int b) {
 
 template<typename T>
 int car(T t) {
-    return t([=](int a, int b){return a;});
+    return t([](int a, int b){return a;});
 }
 
 template<typename T>
 int cdr(T t) {
-    return t([=](int a, int b){return b;});
+    return t([](int a, int b){return b;});
 }
 
 int main() {
