@@ -9,7 +9,7 @@
 # nd(i) = | 
 #         | nd(i-1), if not
 #
-# with nd(1) = nd(0) = 1
+# with nd(0) = 1
 #
 # This solution gives O(n) runtime and
 # O(1) space complexity.
