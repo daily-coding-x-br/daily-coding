@@ -1,3 +1,12 @@
+/*
+O(n) time, O(1) additional space
+
+DP with two variables.
+When processing the i-th value:
+    a: best solution using the first i-2 values
+    b: best solution using the first i-1 values
+Answer: b at the end
+*/
 #include<bits/stdc++.h>
 
 using namespace std;
