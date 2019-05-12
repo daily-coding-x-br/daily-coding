@@ -17,10 +17,9 @@ def largest_non_adjacent_sum(arr):
     B1 = arr[0]
 
     for i in range(2, len(arr)+1):
-        B = max(arr[i-1] + B0, B1)
-        B1, B0 = B, B1
+        B1, B0 = max(arr[i-1] + B0, B1), B1
     
-    return B
+    return B1
 
 if __name__ == "__main__":
     # get array from input
