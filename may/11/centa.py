@@ -4,22 +4,23 @@
 # arr[0:i] and I[i] be the largest sum of non-adjacent elements on the
 # subarray arr[0:i] including the last element (index i-1). Then:
 #
-# I[i] = arr[i-1] + B[i-2]
+# I[i] = arr[i-1] + L[i-2]
 #
-# B[i] = max(I[i], B[i-1])
+# L[i] = max(I[i], L[i-1])
 #
 # with B[0] = 0 and B[1] = arr[0].
 # Note that it is only necessary to store the last two values of B, so
 # this solution has O(1) space complexity and O(n) runtime.
 
 def largest_non_adjacent_sum(arr):
-    B0 = 0
-    B1 = arr[0]
+    L0 = 0
+    L1 = arr[0]
 
     for i in range(2, len(arr)+1):
-        B1, B0 = max(arr[i-1] + B0, B1), B1
+        L1, L0 = max(arr[i-1] + L0, L1), L1
     
-    return B1
+    return L1
+
 
 if __name__ == "__main__":
     # get array from input
