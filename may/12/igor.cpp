@@ -9,8 +9,15 @@ public:
         this->n = n;
         this->f = f;
         this->t0 = clock();
-        thread t(&Scheduler::loop, this);
-        t.join();
+    }
+
+    ~Scheduler() {
+        t->join();
+        delete t;
+    }
+
+    void start() {
+        t = new thread(&Scheduler::loop, this);
     }
 
     void loop() {
@@ -19,6 +26,7 @@ public:
         f(t0);
     }
 
+    thread *t;
     time_t t0, n;
     void (*f)(time_t);
 };
@@ -28,6 +36,8 @@ void foo(time_t t0) {
 }
 
 int main() {
-    Scheduler s(10, &foo);
+    Scheduler s(123, &foo);
+    s.start();
+    cout << "Doing other stuff" << endl;
     return 0;
 }
