@@ -8,8 +8,8 @@
 #
 # L[i] = max(I[i], L[i-1])
 #
-# with B[0] = 0 and B[1] = arr[0].
-# Note that it is only necessary to store the last two values of B, so
+# with L[0] = 0 and L[1] = arr[0].
+# Note that it is only necessary to store the last two values of L, so
 # this solution has O(1) space complexity and O(n) runtime.
 
 def largest_non_adjacent_sum(arr):
