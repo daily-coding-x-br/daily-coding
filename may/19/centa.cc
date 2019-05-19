@@ -28,7 +28,7 @@ int count_tabs(istream& str) {
 }
 
 // This function assumes that there is only one root (top-level directory)
-Node *decode_filesystem(istream& filesystem, int level) {
+Node *decode_filesystem(istream& filesystem) {
     deque<pair<int, Node*>> stack; 
 
     while (!filesystem.eof()) {
@@ -93,7 +93,7 @@ int longest_absolute_path_to_file(Node *root) {
 int main() {
     ifstream filesystem("./input");
 
-    Node *root = decode_filesystem(filesystem, 0);
+    Node *root = decode_filesystem(filesystem);
 
     cout << longest_absolute_path_to_file(root);
 
