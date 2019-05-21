@@ -1,6 +1,4 @@
-def cumul_cost(k, pb, ps, pbc, psc):
-    if k == pb:
-        return  
+# DP with O(N*K) runtime and O(1) space complexity
 
 def minimum_cost_house_coloring(costs):
     N = len(costs)
