@@ -38,7 +38,6 @@ class PrefixTree:
             elif letter in curr_node:
                 curr_word.append(letter)
                 curr_node = curr_node[letter]
-                i += 1
 
             else:
                 return False
