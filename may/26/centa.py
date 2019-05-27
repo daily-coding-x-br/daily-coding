@@ -23,8 +23,8 @@ class Node:
         if self.num_locked_descendants > 0:
             return False
 
-        curr = self
-        while curr.parent is not None:
+        curr = self.parent
+        while curr is not None:
             if curr.locked:
                 return False
             curr = curr.parent
