@@ -76,4 +76,4 @@ class Node:
         
         self.locked = False
 
-        return False
+        return True
