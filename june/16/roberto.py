@@ -4,5 +4,10 @@ def rand7():
 
 # implement randN given randM
 def randN():
-	r = randM()*M + randM()
-	return r%N if r < ((M**2)//N)*N else randN()
+	r, maxR = 0, 0
+	while (maxR < N):
+		r *= M;
+		r += randM()
+		maxR *= M;
+	# r is uniformly distributed in [0, maxR - 1], with maxR >= N
+	return r%N if r < ((maxR)//N)*N else randN()
