@@ -20,6 +20,7 @@ def exists(board, word):
 		for k, l in neighbors:
 			if wordAt(k, l, word, index+1):
 				return True
+		visited.remove((i, j))
 		return False
 
 	for i in range(len(board)):
