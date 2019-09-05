@@ -5,6 +5,7 @@ Given a string, return whether it represents a number. Here are the different ki
 * "10.1", a positive real number
 * "-10.1", a negative real number
 * "1e5", a number in scientific notation
+
 And here are examples of non-numbers:
 
 * "a"
