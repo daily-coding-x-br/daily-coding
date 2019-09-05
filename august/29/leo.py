@@ -1,28 +1,22 @@
-from queue import Queue
-class Node:
-    def __init__(self,c,l=None,r=None):
-        self.c=c
-        self.l=l
-        self.r=r
-        
-def sol(root):
-    q=Queue()
-    sums=[]
-    def __sol(node,level):
-        if level==len(sums):
-            sums.append(0)
-        sums[level]+=node.c
-        if node.r:
-            q.put((node.l,level+1))
-        if node.r:
-            q.put((node.r,level+1))
-        if q.qsize():
-            __sol(*q.get())
-    __sol(root,0)
-    im,m=0,None
-    for i,v in enumerate(sums):
-        if m==None or v<m:
-            im,m=i,v
-    return im
-    
-            
+class Interval:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+def intersec(x,y):
+    if x.b<y.a or y.b<x.a:
+        return None
+    return Interval(max((x.a,y.a)),min((x.b,y.b)))
+
+def sol(list_itv):
+    intersec_list=[]
+    for aux in list_itv:
+        it=Interval(*aux)
+        check=False
+        for idx in range(len(intersec_list)):
+            aux_itv=intersec(it,intersec_list[idx])
+            if aux_itv:
+                intersec_list[idx]=aux_itv
+                check=True
+        if not check:
+            intersec_list.append(it)
+    return [t.a for t in intersec_list]
