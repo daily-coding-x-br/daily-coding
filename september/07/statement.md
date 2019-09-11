@@ -7,6 +7,7 @@ The goal of this puzzle is to move all the disks from the first rod to the last 
 * You can only move one disk at a time.
 * A move consists of taking the uppermost disk from one of the stacks and placing it on top of another stack.
 * You cannot place a larger disk on top of a smaller disk.
+
 Write a function that prints out all the steps necessary to complete the Tower of Hanoi. You should assume that the rods are numbered, with the first rod being 1, the second (auxiliary) rod being 2, and the last (goal) rod being 3.
 
 For example, with n = 3, we can do this in 7 moves:
